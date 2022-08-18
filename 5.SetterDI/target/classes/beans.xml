@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+ <!-- Here we are using properties to assign values to the data members 
+  that's why it's also known as property based dependency injection  -->
+  
+  <!-- This is the bean of Student class -->
+  
+   <bean id="student" class="com.setterdi.Student">
+   	   <property name="name" value="Sachin"/>
+       <property name="rollNo" value="34"/>
+       <property name="className" value="10"/>
+       <property name="report" ref="report"/>
+   </bean>
+   
+ <!-- This is the bean of Report class -->
+ 
+    <bean id="report" class="com.setterdi.Report">
+       <property name="mathematics" value="85"/>
+       <property name="chemistry" value="78"/>
+       <property name="physics" value="82"/>
+       <property name="biology" value="89"/>
+    </bean>
+</beans>
