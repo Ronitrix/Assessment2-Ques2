@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is beans.xml file. This is a type of Spring configuration file.
+This is created with the configuration metadata that is later supplied to the
+Container  -->
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!-- Here we are passing the constructor requirements for class BMW.
+  constructor-arg is used to initialize the values of constructors.
+  Here id is the object name and class is the path of your class.
+  So we are using here constructor based dependency.-->
+  
+   <bean id="bmw" class="com.constructordi.BMW">
+ <constructor-arg name="number" value="2022"></constructor-arg>
+ <constructor-arg name="mileage" value="15"></constructor-arg>
+ <constructor-arg name="engine" value="3000"></constructor-arg>
+ </bean>
+ 
+ <!-- Here we are passing the constructor requirements for class Vehicle.
+  constructor-arg is used to initialize the values of constructors.
+  Then we are initializing the contents of address using ref and stating 
+  the id in BMW class -->
+  
+  <bean id="vehicle" class="com.constructordi.Vehicle">
+		<constructor-arg name="model" value="13"></constructor-arg>
+		<constructor-arg name="Mname" value="BMW"></constructor-arg>
+		<constructor-arg name="Mcolor" value="Red"></constructor-arg>
+		<constructor-arg name="bmw" ref ="bmw"></constructor-arg>
+		
+	</bean>
+
+</beans>
